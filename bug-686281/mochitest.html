@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<p id="display"></p>
+<div id="content"></div>
+<script type="text/javascript">
+var div = document.getElementById("content");
+var content = document.getElementById("content");
+var cs = getComputedStyle(content, "");
+
+// Simulate test_value_storage.html
+var gElement = document.getElementById("content");
+var gDeclaration = gElement.style;
+var gComputedStyle = window.getComputedStyle(gElement, "");
+
+function get_cs_shorthand(element, prop, value) {
+  console.log("ComputedStyle: Set '" + prop + " as " + value + "'");
+
+  var style = element.style;
+  var computedStyle = window.getComputedStyle(element, "");
+
+  style.removeProperty(prop);
+  style.setProperty(prop, value, "")
+  var before = computedStyle.getPropertyValue(prop);
+  style.setProperty(prop, before, "")
+  var after = computedStyle.getPropertyValue(prop);
+
+  console.log("before setProperty = '" + before + "'");
+  console.log("after setProperty = '" + after + "'");
+  console.log("----------------------------------------")
+}
+
+function get_declaration_shorthand(element, prop, value) {
+  console.log("Declaration: Set '" + prop + " as " + value + "'");
+
+  var style = element.style;
+
+  style.removeProperty(prop);
+  style.setProperty(prop, value, "")
+  var before = style.getPropertyValue(prop);
+  style.setProperty(prop, before, "")
+  var after = style.getPropertyValue(prop);
+
+  console.log("before setProperty = '" + before + "'");
+  console.log("after setProperty = '" + after + "'");
+  console.log("----------------------------------------")
+}
+
+get_cs_shorthand(gElement, "background", "0% 0%");
+get_declaration_shorthand(gElement, "background", "0% 0%");
+//get_cs_shorthand("transition", "all 0s ease 0s");
+
+//get_cs_shorthand("text-decoration", "underline #ff0000");
+get_cs_shorthand(gElement, "mask", "none repeat-y alpha add 0% 0%");
+get_declaration_shorthand(gElement, "mask", "none repeat-y alpha add 0% 0%");
+//get_cs_shorthand("-moz-transform", "translate(10px, -3px)");
+
+
+</script>
+</body>
+</html>

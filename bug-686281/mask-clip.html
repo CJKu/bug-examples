@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="mask-repeat">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>mask clip</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
+        <style type="text/css">
+        body {
+            margin: 0px;
+        }
+
+        .container {
+            width: 1200px;
+            height: 1200px;
+            margin: 0px;
+        }
+        div {
+            padding:300px;
+            border: 10px dotted #000000;
+            background-image: url("sample1.jpg");
+            -webkit-mask-image: url(mask-flower.png);
+            mask-image: url(mask-flower.png);
+
+            -webkit-mask-clip: content-box;
+            mask-clip: content-box;
+        }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            mask-clip
+        </div>
+    </body>
+</html>

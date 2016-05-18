@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <base href="file:///Users/cjcool/repository/bug-outgrowth/bug-652991/">
+        <meta charset="utf-8">
+        <title>Raphaël—JavaScript Library</title>
+        <meta name="author" content="Dmitry Baranovskiy">
+        <meta name="description" content="Vector Graphics JavaScript Library">
+        <meta name="keywords" content="JavaScript Library, Raphael, SVG, VML">
+        <meta name="viewport" content="width=450">
+        <link rel="alternate" type="application/atom+xml" href="http://twitter.com/statuses/user_timeline/17180567.atom">
+        <link rel="stylesheet" href="ball_files/site.css">
+        <link rel="apple-touch-icon-precomposed" href="http://dmitrybaranovskiy.github.io/i114.png">
+        <link rel="shortcut icon" href="http://dmitrybaranovskiy.github.io/favicon16.png" type="image/x-icon">
+    </head>
+    <body class="raphael" id="raphael.dmitry.baranovskiy.com">
+        <div id="header">
+            <h1><span>&nbsp;</span>Raphaël—JavaScript Library</h1>
+        </div>
+        <div id="content">
+            <div id="top">&nbsp;</div>
+            <div id="column-1">
+                <h2 id="what-is-it"><span><svg style="overflow: hidden; position: relative; top: -0.116669px;" xmlns="http://www.w3.org/2000/svg" width="32" version="1.1" height="32"><desc>Created with Raphaël 2.0.0</desc><defs></defs><path d="M16,1.466C7.973,1.466,1.466,7.973,1.466,16C1.466,24.027,7.973,30.534,16,30.534C24.027,30.534,30.534,24.027,30.534,15.999999999999998C30.534,7.973,24.027,1.466,16,1.466ZM17.328,24.371H14.620999999999999V21.775H17.328V24.371ZM17.328,19.003V19.861H14.620999999999999V18.804000000000002C14.620999999999999,15.614000000000003,18.250999999999998,15.108000000000002,18.250999999999998,12.841000000000001C18.250999999999998,11.807,17.326999999999998,11.015,16.116999999999997,11.015C14.862999999999998,11.015,13.762999999999998,11.939,13.762999999999998,11.939L12.221999999999998,10.024000000000001C12.221999999999998,10.024000000000001,13.740999999999998,8.440000000000001,16.358999999999998,8.440000000000001C18.845999999999997,8.440000000000001,21.154999999999998,9.98,21.154999999999998,12.576C21.156,16.208,17.328,16.627,17.328,19.003Z" stroke="none" fill="#333333" style=""></path></svg>&nbsp;</span>What is it?</h2>
+                <p>
+                    Raphaël is a small JavaScript library that should simplify your work with vector graphics on the
+                    web. If you want to create your own specific chart or image crop and rotate widget, for example,
+                    you can achieve it simply and easily with this library.
+                </p>
+                <p class="not-prime">
+                    Raphaël ['ræfeɪəl] uses the <abbr title="Sclable Vector Graphics">SVG</abbr> <abbr title="World
+                    Wide Web Consortium">W3C</abbr> Recommendation and <abbr title="Vector Markup Language">VML</abbr>
+                    as a&nbsp;base for creating graphics. This means every graphical object you create is also
+                    a&nbsp;<abbr title="Document Object Model">DOM</abbr> object, so you can attach JavaScript event
+                    handlers or modify them later. Raphaël’s goal is to provide an adapter that will make drawing
+                    vector art compatible cross-browser and easy.
+                </p>
+                <p class="not-prime">
+                    Raphaël currently supports Firefox&nbsp;3.0+, Safari&nbsp;3.0+, Chrome&nbsp;5.0+, Opera&nbsp;9.5+
+                    and Internet Explorer&nbsp;6.0+.
+                </p>
+                <h2 id="how-to-use-it"><span><svg style="overflow: hidden; position: relative; top: -0.950012px;" xmlns="http://www.w3.org/2000/svg" width="32" version="1.1" height="32"><desc>Created with Raphaël 2.0.0</desc><defs></defs><path d="M26.834,14.693C28.65,12.605,29.015,9.754999999999999,28.027,7.359L24.381,11.611L20.787,10.912L19.596,7.45L23.233,3.208C20.731,2.5780000000000003,17.975,3.338,16.167,5.418C14.260000000000002,7.611000000000001,13.948000000000002,10.647,15.128000000000002,13.111L5.624,24.04C4.6129999999999995,25.201999999999998,4.736,26.964,5.898,27.974999999999998C7.06,28.985,8.822,28.863,9.833,27.700999999999997L19.326,16.782999999999998C21.939,17.625,24.918,16.896,26.834,14.693Z" stroke="none" fill="#333333" style=""></path></svg>&nbsp;</span>How to use it?</h2>
+                <p>
+                    Download and include <code>raphael.js</code> into your HTML page, then use it as simple as:
+                </p>
+                <pre class="javascript code"><code><span class="c">// Creates canvas 320 × 200 at 10, 50</span>
+<b>var</b> paper <span class="s">=</span> Raphael(<span class="d">10</span>, <span class="d">50</span>, <span class="d">320</span>, <span class="d">200</span>);
+
+<span class="c">// Creates circle at x = 50, y = 40, with radius 10</span>
+<b>var</b> circle <span class="s">=</span> paper.circle(<span class="d">50</span>, <span class="d">40</span>, <span class="d">10</span>);
+<span class="c">// Sets the fill attribute of the circle to red (#f00)</span>
+circle.attr(<i>"fill"</i>, <i>"#f00"</i>);
+
+<span class="c">// Sets the stroke attribute of the circle to white</span>
+circle.attr(<i>"stroke"</i>, <i>"#fff"</i>);</code>
+</pre>
+                <h2 id="demo"><span><svg style="overflow: hidden; position: relative; top: -0.783325px;" xmlns="http://www.w3.org/2000/svg" width="32" version="1.1" height="32"><desc>Created with Raphaël 2.0.0</desc><defs></defs><path d="M23.043,4.649L22.639,2.337L21.049,4.064L18.726,3.735L19.877,5.78L18.845,7.888L21.146,7.425L22.832,9.058L23.103,6.726L25.177,5.627M26.217,18.198L26.035,16.948L25.153,17.854L23.908,17.64L24.496,18.758L23.908,19.876L25.153,19.662L26.035,20.567L26.217,19.317L27.35,18.758M4.92,7.672L5.868,7.3L6.712,7.869L6.65,6.853L7.453,6.226L6.467,5.97L6.118,5.013L5.571,5.872L4.553,5.908L5.201,6.694M10.439,10.505L11.46,9.409L12.941,9.628L12.214,8.319L12.881,6.978L11.411,7.265L10.341,6.216L10.16,7.703L8.832,8.396L10.19,9.028M17.234,12.721C16.646,12.353,16.062,12.103,15.542000000000002,11.992C15.05,11.903,14.503000000000002,11.843000000000002,14.117,12.366000000000001L2.562,30.788H9.241999999999999L18.911,15.372C19.214000000000002,14.796,18.923000000000002,14.331,18.628,13.925C18.303,13.508,17.822,13.09,17.234,12.721ZM13.613,21.936C13.359,21.54,12.873,21.079,12.24,20.682C11.608,20.285999999999998,10.982,20.048,10.514,19.991999999999997L14.934999999999999,12.939999999999998C14.998999999999999,12.926999999999998,15.197,12.918999999999997,15.477999999999998,13.005999999999998C15.823999999999998,13.097999999999999,16.262999999999998,13.290999999999999,16.703,13.567999999999998C17.207,13.880999999999998,17.611,14.244999999999997,17.836,14.537999999999998C17.948999999999998,14.682999999999998,18.014,14.809,18.031,14.873C18.032999999999998,14.879,18.035,14.883999999999999,18.035,14.888L13.613,21.936Z" stroke="none" fill="#333333" style=""></path></svg>&nbsp;</span>Demos</h2>
+                <ul id="demos">
+                    <li id="playground">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/playground.html" title="Raphaël Playground">Raphaël Playground</a>
+                    </li>
+                    <li id="reflection">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/reflection.html" title="Reflection">Reflection</a>
+                    </li>
+                    <li id="rotation1">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/image-rotation.html" title="Image rotation">Image rotation</a>
+                    </li>
+                    <li id="rotation2">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/text-rotation.html" title="Text rotation">Text rotation</a>
+                    </li>
+                    <li id="impact">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/github/impact.html" title="GitHub-a-like impact chart">GitHub-a-like impact chart</a>
+                    </li>
+                    <li id="punch">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/github/dots.html" title="GitHub-a-like punch chart">GitHub-a-like punch chart</a>
+                    </li>
+                    <li id="pie">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/pie.html" title="GitHub-a-like languages chart">GitHub-a-like languages chart</a>
+                    </li>
+                    <li id="analytics">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/analytics.html" title="Raphaël Analytics chart">Raphaël Analytics chart</a>
+                    </li>
+                    <li id="polar">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/polar-clock.html" title="Polar Clock">Polar Clock</a>
+                    </li>
+                    <li id="spin">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/spin-spin-spin.html" title="Dynamic Spinner">Dynamic Spinner</a>
+                    </li>
+                    <li id="australia">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/australia.html" title="Australian Map">Australian Map</a>
+                    </li>
+                    <li id="helvetica">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/helvetica.html" title="Dancing Helvetica">Dancing Helvetica</a>
+                    </li>
+                    <li id="chart">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/chart.html" title="Multichart">Multichart</a>
+                    </li>
+                    <li id="animation">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/animation.html" title="Animation">Animation</a>
+                    </li>
+                    <li id="tiger">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/tiger.html" title="SVG “Hello World”">Tiger</a>
+                    </li>
+                    <li id="hand">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/hand.html" title="Hand">Hand</a>
+                    </li>
+                    <li id="ichart">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/ichart.html" title="Interactive Chart">Interactive Chart</a>
+                    </li>
+                    <li id="graffle">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/graffle.html" title="Diagram">Diagram</a>
+                    </li>
+                    <li id="fonts">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/fonts.html" title="Custom Fonts">Custom Fonts</a>
+                    </li>
+                    <li id="easing">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/easing.html" title="Animation Easing">Animation Easing</a>
+                    </li>
+                    <li id="ball">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/ball.html" title="Gradients Example">Gradients Example</a>
+                    </li>
+                    <li id="curver">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/curver.html" title="Mini Illustrator">Curver</a>
+                    </li>
+                    <li id="gear">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/gear.html" title="Animation along the path demo">Animation along the path demo</a>
+                    </li>
+                    <li id="scape">
+                        <a href="http://dmitrybaranovskiy.github.io/scape/" title="3D Shooter">3D Shooter</a>
+                    </li>
+                    <li id="picker">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/picker.html" title="Colour Picker">Colour Picker</a>
+                    </li>
+                    <li id="growing-pie">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/growing-pie.html" title="Growing Pie">Growing Pie</a>
+                    </li>
+                    <li id="bounce">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/bounce.html" title="Bounce">Bounce</a>
+                    </li>
+                    <li id="angry">
+                        <a href="http://dmitrybaranovskiy.github.io/raphael/angry.html" title="Angry Birds Clone">Angry Birds Clone</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="column-2">
+                <ul id="aside">
+                    <li id="download">
+                        <h2><a href="https://raw.githubusercontent.com/DmitryBaranovskiy/raphael/master/raphael.min.js" title="Minified Library Code"><span><svg style="overflow: hidden; position: relative; left: -0.516724px; top: -0.116669px;" xmlns="http://www.w3.org/2000/svg" width="32" version="1.1" height="32"><desc>Created with Raphaël 2.0.0</desc><defs></defs><path d="M24.345,13.904C24.363999999999997,13.709,24.375,13.512,24.375,13.313C24.375,9.861,21.576999999999998,7.063000000000001,18.125,7.063000000000001C15.446,7.063000000000001,13.167,8.752,12.277999999999999,11.122C11.688999999999998,10.475999999999999,10.848999999999998,10.063,9.905999999999999,10.063C8.127999999999998,10.063,6.686999999999999,11.504000000000001,6.686999999999999,13.282C6.686999999999999,13.492,6.709999999999999,13.697,6.749,13.895C4.377,14.286,2.5619999999999994,16.331,2.5619999999999994,18.813C2.5619999999999994,21.575,4.800999999999999,23.813,7.561999999999999,23.813H10.966L10.258999999999999,23.105999999999998C9.881999999999998,22.729,9.674,22.226999999999997,9.674,21.692999999999998C9.674,21.159999999999997,9.882,20.657999999999998,10.259,20.281L10.815000000000001,19.724C11.215000000000002,19.325,11.752,19.096,12.286000000000001,19.096C12.313,19.096,12.340000000000002,19.096,12.366000000000001,19.098V18.625999999999998C12.366000000000001,17.522,13.264000000000001,16.624,14.366000000000001,16.624H17.632C18.735000000000003,16.624,19.632,17.522,19.632,18.625999999999998V19.098C19.659000000000002,19.096,19.686,19.096,19.713,19.096C20.246000000000002,19.096,20.783,19.325,21.183,19.726L21.74,20.278C22.52,21.058999999999997,22.52,22.328,21.74,23.105999999999998L21.034,23.813H23.436999999999998C26.198999999999998,23.813,28.436999999999998,21.575,28.436999999999998,18.813C28.438,16.362,26.672,14.332,24.345,13.904ZM21.033,20.986L20.477,20.431C20.087,20.042,19.513,19.981,19.201,20.294C18.889,20.606,18.633,20.412,18.633,19.862000000000002V18.624000000000002C18.633,18.074,18.182,17.624000000000002,17.633,17.624000000000002H14.367999999999999C13.817999999999998,17.624000000000002,13.367999999999999,18.074,13.367999999999999,18.624000000000002V19.862000000000002C13.367999999999999,20.412000000000003,13.111999999999998,20.606,12.799,20.294C12.487,19.981,11.911999999999999,20.042,11.523,20.431L10.966999999999999,20.986C10.576999999999998,21.375,10.576999999999998,22.01,10.966,22.399L15.294,26.73C15.488000000000001,26.924,15.745000000000001,27.021,16.001,27.021S16.513,26.924,16.708000000000002,26.73L21.035000000000004,22.399C21.424,22.011,21.423,21.375,21.033,20.986Z" stroke="none" fill="#333333" style=""></path></svg>&nbsp;</span>Download v2.2.0</a></h2>
+                        <p>
+                            Our recommendation is to <abbr title="GNU ZIP">GZIP</abbr> it. It will help to reduce file size to&nbsp;<strong>20&nbsp;Kb</strong>.
+                        </p>
+                        <p>
+                            You can download <a href="https://raw.githubusercontent.com/DmitryBaranovskiy/raphael/master/raphael.js" title="Uncompressed Library Code">uncompressed source</a> as well.
+                        </p>
+                    </li>
+                    <li id="documentation">
+                        <h2><a href="http://dmitrybaranovskiy.github.io/raphael/reference.html" title="Documentation"><span><svg style="overflow: hidden; position: relative; left: -0.516724px; top: -0.549988px;" xmlns="http://www.w3.org/2000/svg" width="32" version="1.1" height="32"><desc>Created with Raphaël 2.0.0</desc><defs></defs><path d="M23.024,5.673C21.28,3.979,19.399,2.622,17.856,2.437C17.772000000000002,2.425,17.685000000000002,2.4179999999999997,17.593,2.416H7.438C7.276,2.416,7.116,2.479,7.002,2.596C6.889,2.71,6.822,2.87,6.822,3.033V28.783C6.822,28.945,6.885,29.1,7.002,29.218C7.119,29.334,7.273,29.397,7.438,29.397H25.802C25.964,29.397,26.119,29.334999999999997,26.236,29.218C26.353,29.101,26.418,28.946,26.418,28.783V11.648C26.382,9.659,24.824,7.49,23.024,5.673ZM25.184,28.164H8.052V3.646H17.594V3.6479999999999997C18.01,3.6229999999999998,18.369,4.034,18.644000000000002,4.974C18.894000000000002,5.869,18.957,7.036,18.956000000000003,7.845000000000001C18.958000000000002,8.438,18.929000000000002,8.836,18.929000000000002,8.836L18.880000000000003,9.488L19.536,9.495C19.539,9.495,21.052,9.513,22.536,9.85C23.962,10.158,25.077,10.772,25.181,11.466999999999999C25.185000000000002,11.528999999999998,25.186,11.591,25.185000000000002,11.649V28.164Z" stroke="none" fill="#333333" style=""></path></svg>&nbsp;</span>Documentation</a></h2>
+                    </li>
+                    <li id="discuss">
+                        <h2><a href="http://groups.google.com/group/raphaeljs" title="Google Group"><span>&nbsp;</span>Discussion Group</a></h2>
+                    </li>
+                    <li id="irc">
+                        <h2><span><svg style="overflow: hidden; position: relative; left: -0.516724px; top: -0.416656px;" xmlns="http://www.w3.org/2000/svg" width="32" version="1.1" height="32"><desc>Created with Raphaël 2.0.0</desc><defs></defs><path d="M4.998,12.127V20.023H9.493L16.222,25.549L16.226000000000003,6.600999999999999L9.496000000000002,12.126999999999999H4.998ZM18.806,11.219C18.413,10.83,17.782,10.83,17.391000000000002,11.221C17.001,11.612,17.001,12.245000000000001,17.393,12.637V12.635C18.256,13.499,18.788,14.684,18.788,16.001C18.788,17.317,18.257,18.498,17.395,19.362000000000002C17.001,19.751,17.001,20.384,17.393,20.777C17.588,20.972,17.844,21.07,18.1,21.07C18.357000000000003,21.07,18.613000000000003,20.972,18.808,20.777C20.03,19.557000000000002,20.788,17.862000000000002,20.787,16.001C20.788,14.136,20.027,12.439,18.806,11.219ZM21.101,8.925C20.708,8.534,20.076999999999998,8.534,19.688,8.925C19.296,9.316,19.296,9.950000000000001,19.688,10.339C21.137999999999998,11.790000000000001,22.032,13.786000000000001,22.032,16C22.032,18.212,21.138,20.207,19.69,21.659C19.298000000000002,22.049,19.298000000000002,22.682,19.69,23.073C19.885,23.268,20.141000000000002,23.366,20.398,23.366C20.654,23.366,20.91,23.268,21.105,23.073C22.913,21.264,24.034,18.758,24.032,16C24.033,13.24,22.912,10.732,21.101,8.925ZM23.28,6.746C22.887,6.355,22.255000000000003,6.357,21.866,6.748C21.475,7.1370000000000005,21.475,7.771,21.868,8.161H21.866C23.875,10.17,25.114,12.934,25.114,16C25.114,19.063,23.875,21.828,21.868000000000002,23.838C21.477000000000004,24.228,21.477000000000004,24.861,21.87,25.253C22.064,25.447,22.32,25.544,22.576,25.544S23.089000000000002,25.446,23.284,25.251C25.647,22.885,27.115,19.608,27.113,16C27.115,12.389,25.647,9.111,23.28,6.746Z" stroke="none" fill="#333333" style=""></path></svg>&nbsp;</span>IRC Channel</h2>
+                        <p>#raphael.js at irc.freenode.net</p>
+                    </li>
+                    <li id="twitter">
+                        <h2><a href="http://twitter.com/RaphaelJS/" title="Twitter"><span><svg style="overflow: hidden; position: relative; left: -0.516724px; top: -0.849976px;" xmlns="http://www.w3.org/2000/svg" width="32" version="1.1" height="32"><desc>Created with Raphaël 2.0.0</desc><defs></defs><path d="M23.295,22.567H16.082C13.957,22.567,11.979000000000001,20.352,11.979000000000001,17.831V16.002H23.211C25.028,16.002,26.502,14.533,26.502,12.720999999999998C26.502,10.907999999999998,25.028,9.438999999999998,23.211,9.438999999999998H11.979V6.198C11.979,4.363,10.604,2.8750000000000004,8.786999999999999,2.8750000000000004C6.970999999999999,2.8750000000000004,5.496999999999999,4.363,5.496999999999999,6.198V17.831C5.496999999999999,24.061,10.181999999999999,29.104999999999997,15.972999999999999,29.104999999999997H23.183999999999997C25.002,29.104999999999997,26.502,27.641999999999996,26.502,25.806999999999995S25.112,22.567,23.295,22.567Z" stroke="none" fill="#333333" style=""></path></svg>&nbsp;</span>Twitter</a></h2>
+                    </li>
+                    <li id="icons">
+                        <h2><a href="http://dmitrybaranovskiy.github.io/icons/" title="Free icons"><span><svg style="overflow: hidden; position: relative; left: -0.516724px; top: -0.283325px;" xmlns="http://www.w3.org/2000/svg" width="32" version="1.1" height="32"><desc>Created with Raphaël 2.0.0</desc><defs></defs><path d="M15.999,22.77L7.115,29.224L10.511,18.784L1.6289999999999996,12.329999999999998L12.607999999999999,12.331999999999999L15.526,3.3549999999999986L16.002,1.8969999999999987L19.392,12.329999999999998H30.374L21.488,18.784L24.884999999999998,29.226999999999997L15.999,22.77L15.999,22.77Z" stroke="none" fill="#333333" style=""></path></svg>&nbsp;</span>Free Icons</a></h2>
+                    </li>
+                    <li id="donate">
+                        <h2><a href="http://www.pledgie.com/campaigns/1776" title="Donate, but only if you like it"><span><svg style="overflow: hidden; position: relative; left: -0.516724px; top: -0.716675px;" xmlns="http://www.w3.org/2000/svg" width="32" version="1.1" height="32"><desc>Created with Raphaël 2.0.0</desc><defs></defs><path d="M16,1.466C7.973,1.466,1.466,7.973,1.466,16C1.466,24.027,7.973,30.534,16,30.534C24.027,30.534,30.534,24.027,30.534,15.999999999999998C30.534,7.973,24.027,1.466,16,1.466ZM17.255,23.88V25.927H15.296999999999999V23.903C12.084,23.462999999999997,10.675999999999998,20.823,10.675999999999998,20.823L12.677999999999997,19.15C12.677999999999997,19.15,13.953999999999997,21.372999999999998,16.263999999999996,21.372999999999998C17.539999999999996,21.372999999999998,18.507999999999996,20.689999999999998,18.507999999999996,19.523999999999997C18.507999999999996,16.794999999999998,11.158999999999995,17.125999999999998,11.158999999999995,12.064999999999998C11.158999999999995,9.864999999999998,12.896999999999995,8.279999999999998,15.295999999999996,7.905999999999998V5.859H17.253999999999994V7.904999999999999C18.925999999999995,8.125,20.905999999999995,9.004999999999999,20.905999999999995,10.898V12.35H18.309999999999995V11.645999999999999C18.309999999999995,10.919999999999998,17.384999999999994,10.436,16.350999999999996,10.436C15.030999999999995,10.436,14.062999999999995,11.096,14.062999999999995,12.02C14.062999999999995,14.814,21.411999999999995,14.132,21.411999999999995,19.435C21.413,21.614,19.785,23.506,17.255,23.88Z" stroke="none" fill="#333333" style=""></path></svg>&nbsp;</span>Donate</a></h2>
+                    </li>
+                    <li id="opensource">
+                        <h2><a href="http://dmitrybaranovskiy.github.io/license.html" rel="license" title="MIT License"><span><svg style="overflow: hidden; position: relative; left: -0.516724px; top: -0.150024px;" xmlns="http://www.w3.org/2000/svg" width="32" version="1.1" height="32"><desc>Created with Raphaël 2.0.0</desc><defs></defs><path d="M16,1.466C7.973,1.466,1.466,7.973,1.466,16C1.466,24.027,7.973,30.534,16,30.534C24.027,30.534,30.534,24.027,30.534,15.999999999999998C30.534,7.973,24.027,1.466,16,1.466ZM20.729,7.375C21.662,7.375,22.416999999999998,8.858,22.416999999999998,10.687S21.661,14,20.729,14C19.797,14,19.041,12.517,19.041,10.688S19.798,7.375,20.729,7.375ZM11.104,7.375C12.036,7.375,12.792,8.858,12.792,10.687S12.037,14,11.104,14S9.415999999999999,12.517,9.415999999999999,10.688S10.172,7.375,11.104,7.375ZM16.021,26C13.148,26,10.458000000000002,24.243,8.142000000000001,21.189C10.539000000000001,22.754,13.163,23.625,15.916,23.625C18.839,23.625,21.617,22.645,24.131,20.891C21.766,24.132,18.99,26,16.021,26Z" stroke="none" fill="#333333" style=""></path></svg>&nbsp;</span>MIT License</a></h2>
+                    </li>
+                    <li id="sencha">
+                        <h2>Part of <strong><a href="http://sencha.com/"><span>&nbsp;</span>Sencha Labs</a></strong></h2>
+                    </li>
+                    <li id="github">
+                        <h2><a href="http://github.com/DmitryBaranovskiy/raphael/" title="Source Code at GitHub"><span><svg style="overflow: hidden; position: relative; left: -0.516724px; top: -0.766663px;" xmlns="http://www.w3.org/2000/svg" width="32" version="1.1" height="32"><desc>Created with Raphaël 2.0.0</desc><defs></defs><path d="M26.974,16.514L30.739,14.523C30.665,13.785,30.522000000000002,13.068999999999999,30.343,12.366L26.161,11.786999999999999C25.799000000000003,10.915,25.321,10.105999999999998,24.759,9.363999999999999L26.353,5.443C25.829,4.9319999999999995,25.263,4.465999999999999,24.667,4.037L21.116,6.266C20.283,5.828,19.386,5.496,18.444,5.282L17.160999999999998,1.306C16.796999999999997,1.2790000000000001,16.432999999999996,1.25,16.061999999999998,1.25S15.327999999999998,1.278,14.962999999999997,1.306L13.691999999999997,5.247C12.724999999999996,5.454,11.807999999999996,5.79,10.953999999999997,6.233L7.458,4.037C6.863,4.466,6.297,4.932,5.773,5.443L7.3229999999999995,9.254999999999999C6.718999999999999,10.03,6.212999999999999,10.883999999999999,5.832999999999999,11.805L1.7829999999999995,12.365C1.6049999999999995,13.068,1.4609999999999994,13.783,1.3879999999999995,14.522L5.023,16.445C5.064,17.458,5.231999999999999,18.439,5.529,19.363L2.787,22.395C3.106,23.056,3.461,23.698,3.872,24.3L7.909,23.433C8.571,24.153,9.325,24.784,10.157,25.306L10.004,29.437C10.667,29.736,11.356,29.986,12.065999999999999,30.186L14.62,26.903C15.073,26.961,15.532,27,16,27C16.507,27,17.003,26.954,17.491,26.887L20.058,30.188000000000002C20.769,29.988000000000003,21.457,29.738000000000003,22.12,29.439000000000004L21.964000000000002,25.234C22.757,24.721,23.476000000000003,24.107000000000003,24.110000000000003,23.413L28.252000000000002,24.302C28.663000000000004,23.7,29.018,23.059,29.337000000000003,22.397L26.506000000000004,19.266C26.778,18.391,26.93,17.467,26.974,16.514ZM20.717,21.297L18.932,22.459L17.834,20.772C17.262999999999998,20.991999999999997,16.648,21.125,16,21.125C13.169,21.125,10.875,18.83,10.875,16C10.875,13.169,13.169,10.875,16,10.875C18.83,10.875,21.125,13.169,21.125,16C21.125,17.414,20.552,18.693,19.626,19.621L20.717,21.297Z" stroke="none" fill="#333333" style=""></path></svg>&nbsp;</span>Source <em class="amp">&amp;</em> Bugs</a></h2>
+                    </li>
+                    <li id="t-shirts">
+                        <h2><a href="http://www.redbubble.com/people/dmitrybaranovsk/shop/raphaeljs+t-shirts" title="t-shirts for sale"><span><svg style="overflow: hidden; position: relative; left: -0.516724px; top: -0.700012px;" xmlns="http://www.w3.org/2000/svg" width="32" version="1.1" height="32"><desc>Created with Raphaël 2.0.0</desc><defs></defs><path d="M20.099,4.039C19.419,5.715999999999999,17.78,6.901,15.86,6.901C13.939,6.901,12.299999999999999,5.715999999999999,11.62,4.039L1.238,8.442L4.159,15.326L7.367,13.965V28H24.466V14.015L27.559,15.327L30.48,8.443L20.099,4.039ZM21.828,18.776L17.276,23.328C16.495,24.108999999999998,15.229,24.108999999999998,14.448,23.328L9.984,18.865C9.203,18.084,9.203,16.817,9.984,16.035999999999998L14.536,11.483999999999998C15.317,10.702999999999998,16.584,10.702999999999998,17.365,11.483999999999998L21.829,15.947C22.61,16.729,22.609,17.995,21.828,18.776Z" stroke="none" fill="#333333" style=""></path></svg>&nbsp;</span>T-shirts <em class="amp">&amp;</em> Stickers</a></h2>
+                    </li>
+                    <li id="quotes">
+                        <h2><span><svg style="overflow: hidden; position: relative;" xmlns="http://www.w3.org/2000/svg" width="32" version="1.1" height="32"><desc>Created with Raphaël 2.0.0</desc><defs></defs></svg>&nbsp;</span>Quotes on Twitter</h2>
+                        <ol>
+                            <li>&nbsp;</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div id="footer">
+                <h3 id="copyright"><a href="http://dmitrybaranovskiy.github.io/license.html" title="MIT License" rel="license">Some Rights Reserved</a> by <a href="http://dmitry.baranovskiy.com/">Dmitry Baranovskiy</a></h3>
+                <h3 id="font">Logo by <a href="http://wasabicube.com/">Wasabicube</a></h3>
+            </div>
+        </div>
+        <script src="ball_files/ga.js" async=""></script><script src="ball_files/raphael.js"></script><script src="ball_files/site.js"></script><script>
+          var _gaq = _gaq || [];
+          _gaq.push(["_setAccount", "UA-616618-3"]);
+          _gaq.push(["_trackPageview"]);
+
+          (function() {
+            var ga = document.createElement("script");
+            ga.async = true;
+            ga.src = "http://www.google-analytics.com/ga.js";
+            var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);
+            window.onload = function() {
+                ga = document.createElement("script");
+                ga.src = "raphael.js";
+                s.parentNode.insertBefore(ga, s);
+                ga = document.createElement("script");
+                ga.src = "site.js";
+                s.parentNode.insertBefore(ga, s);
+            };
+          })();
+
+        </script>
+    
+
+<script src="ball_files/search.json"></script></body></html>

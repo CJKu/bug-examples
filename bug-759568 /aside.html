@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<style type="text/css">
+  .pullquote.animate {
+    /*animation: pull_quote 0.5s ease-in-out 0.2s 1 normal forwards;*/
+}
+
+.pullquote {
+    background-color: white;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke: 0.1rem rgba(255, 0, 0, 0.5);
+    opacity: 1;
+    color: #FA1E64;
+    font-family: "NHaasGroteskTXPro-75Bd","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 2rem;
+    letter-spacing: -0.125rem;
+    line-height: 5.625rem;
+    margin: auto;
+    max-width: 20rem;
+    position: relative;
+    text-align: center;
+    transform: rotate(45deg);
+}
+/*
+.pullquote:before {
+    left: 0.25rem;
+    top: -0.25rem;
+}*/
+
+.pullquote:after {
+    left: 10px;
+    top: 10px;
+}
+
+/*.pullquote:before,*/ .pullquote:after {
+    -webkit-text-stroke: 0.1rem transparent;
+    background-image: -webkit-linear-gradient(left, #FA1E64, #2B00F7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.1);
+    color: transparent;
+
+    content: attr(data-feature-quote);
+    font-family: "NHaasGroteskTXPro-75Bd","Helvetica Neue",Helvetica,Arial,sans-serif;
+    position: absolute;
+    width: 100%;
+    /*transform: translate(10px, 10px);*/
+
+}
+
+@keyframes pull_quote {
+    0%,40%,60%,80%,90%,100% {
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    }
+
+    0% {
+        opacity: 0;
+        transform: rotate(-10.1deg) scale(0.3)
+    }
+
+    40% {
+        opacity: 1;
+        transform: rotate(-10deg) scale(1.1)
+    }
+
+    60% {
+        transform: rotate(-10.1deg) scale(0.9)
+    }
+
+    80% {
+        transform: rotate(-10deg) scale(1.03)
+    }
+
+    90% {
+        transform: rotate(-10.1deg) scale(0.97)
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(10deg) scale(1)
+    }
+}
+
+</style>
+<div class="pullquote animate" data-feature-quote="Lorem Ipsum"><p>Lorem Ipsum</p></div>

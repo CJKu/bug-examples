@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <style type="text/css">
+    #buttons {
+      float: left;
+    }
+    button {
+      display: block;
+      margin: 2em;
+    }
+    #paper {
+      height: 202px;
+      overflow: hidden;
+      width: 202px;
+    }
+  </style>
+</head>
+  <div id="buttons">
+    <ol>
+      <li><button id="hide">Hide the Shape</button></li>
+      <li><button id="history">Change the URL via History API</button></li>
+      <li><button id="show">Show the Shape</button></li>
+    </ol>
+  </div>
+
+  <div id="paper"></div>
+  
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/raphael/1.5.2/raphael-min.js"></script>
+  <script type="text/javascript">
+    var paper = Raphael("paper", 202, 202),
+        el = $("#paper"),
+        c = paper.circle(101, 101, 100);
+
+    c.attr("fill", "url(http://placekitten.com/g/200/300)");
+
+    $("#hide").click(function (e) {
+        c.hide();
+    });
+
+    $("#history").click(function (e) {
+        window.history.pushState(null, "", "new-state");
+    });
+
+    $("#show").click(function (e) {
+        c.show();
+    });
+
+  </script>
+
+</html>

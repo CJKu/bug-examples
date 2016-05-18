@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="reftest-wait">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="200">
+  <defs>
+    <pattern id="pattern-id" x="0" y="0" patternUnits="userSpaceOnUse" height="200" width="200">
+      <rect width="200" height="200" style="fill:rgb(0,0,255)" />
+    </pattern>
+  </defs>
+  <circle id="circle" cx="101" cy="101" r="50" fill="url(#pattern-id)" stroke="#000">
+  </circle>
+</svg>
+<script>
+function doTest() {
+  window.history.pushState(null, "", "new-page");
+
+  circle.style.display = "none";
+  window.setTimeout(showCircle, 0);
+}
+
+function showCircle() {
+  circle.style.display = "inline";
+  document.documentElement.removeAttribute('class');
+}
+
+circle = document.getElementById("circle");
+window.addEventListener("MozReftestInvalidate", doTest);
+</script>

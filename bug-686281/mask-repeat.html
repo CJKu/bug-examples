@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="mask-repeat">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>mask image</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
+        <style type="text/css">
+        body {
+            background-color: gray;
+            /*background-image: url(background-image.png);*/
+        }
+
+        .container {
+            background-image: url(background-image.png);
+            background-repeat: repeat-x;
+            border: 1px solid #333;
+            width: 1000px;
+            height: 1000px;
+
+            -webkit-mask-image: url(mask-flower.png), url(mask-cross.png);
+            mask-image: url(mask-flower.png), url(mask-cross.png);
+            -webkit-mask-repeat: repeat-x, repeat-y;
+            mask-repeat: repeat-x, repeat-y;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            mask-repeat
+        </div>
+    </body>
+</html>

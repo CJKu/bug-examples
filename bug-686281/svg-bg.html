@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="mask-image">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SVG fragment</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
+        <style type="text/css">
+        body {
+            background-color: gray;
+        }
+        .container {
+            background-image: url(faces.svg#devil-view);
+            background-repeat: repeat;
+            width: 150px;
+            height: 150px;
+        }
+        </style>
+        <svg id="ohmy" height="100" width="100">
+          <defs>
+            <circle id="circle" cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+          </defs>
+          <use xlink:href="#circle" x="0" y="0"/>
+          <view id="devil-view" viewBox="0 0 100 50"/>
+        </svg>
+    </head>
+    <body>
+        <div class="container">
+            SVG mask
+            <img src="#devil-view" alt="">
+        </div>
+    </body>
+</html>

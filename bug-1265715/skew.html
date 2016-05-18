@@ -1,0 +1,54 @@
+<!doctype HTML>
+<html>
+  <head>
+    <title>background-clip: RTS</title>
+    <style>
+      div {
+        position: relative;
+        top: 0px;
+        left: 10px;
+        width: 500px;
+        height: 200px;
+        margin: 0px;
+      }
+
+      span {
+        position: absolute;
+        background-image: linear-gradient(green, green);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 120px;
+        font-family: sans-serif;
+        /*z-index: 2;*/
+        margin: 0px;
+      }
+
+      span.skew {
+        transform: skewX(-10deg);
+      }
+      span.translate_skew {
+        transform: translate(-50%, 0px) skewX(-45deg);
+      }
+      span.translate {
+        transform: translate(0px, 0px);
+      }
+      span.rotate {
+        transform: rotate(7deg);
+      }
+      
+    </style>
+  </head>
+  <body style="margin: 0px;">
+    <div>
+      
+    </div>
+
+    <div>
+      <span class="skew">2</span>
+    </div>
+
+
+
+  </body>
+</html>

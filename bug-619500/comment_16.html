@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8" />
+<title>Gecko bug with SVG viewBox testcase</title>
+<style>
+/**
+ * Gecko bug with SVG viewBox testcase
+ */
+div {
+  width: 100px; height: 50px;
+  border: 15px solid;transparent;
+  display: inline-block;
+}
+
+#source_svg {
+  border: unset;
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="50" viewBox="0 0 4 4" ><polygon points="0,1 1,0 3,0 4,1 4,3 3,4 1,4 0,3" fill="deeppink" /><polygon points="1,2 2,2 2,3 1,3" fill="white" /><polygon points="1,0 2,0 2,1 1,1" fill="blue" /><polygon points="0,1 1,1 1,2 0,2" fill="green"/><polygon points="3,2 4,2 4,3 3,3" fill="yellow"/><polygon points="1,3 2,3 2,4 1,4" fill="black" /></svg>');
+}
+#viewbox_rounding_0084{
+  /*border-width: 15px 30px 15px 30px;*/
+  border-image: 25% url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4" ><polygon points="0,2 2,0 6,0 8,2 8,6 6,8 2,8 0,6" fill="deeppink" /><polygon points="2,4 4,4 4,5 2,6" fill="white" /><polygon points="2,0 4,0 4,1 2,1" fill="blue" /><polygon points="0,2 2,2 2,4 0,4" fill="green"/><polygon points="6,4 8,4 8,6 6,6" fill="yellow"/><polygon points="2,6 4,6 4,8 2,8" fill="black" /></svg>');
+}
+#no_vp_vb_silce_number{
+  /*border-width: 15px 30px 15px 30px;*/
+  border-image: 15 url('data:image/svg+xml,<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" ><circle cx="25%" cy="25%" r="25%" fill="red" /><circle cx="75%" cy="25%" r="25%" fill="blue" /><circle cx="25%" cy="75%" r="25%" fill="yellow" /><circle cx="75%" cy="75%" r="25%" fill="green" /></svg>');
+}
+#viewbox_only_minmid{
+  /*border-width: 15px 30px 15px 30px;*/
+  border-image: 25% url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4" ><polygon points="0,1 1,0 3,0 4,1 4,3 3,4 1,4 0,3" fill="deeppink" /><polygon points="1,2 2,2 2,3 1,3" fill="white" /><polygon points="1,0 2,0 2,1 1,1" fill="blue" /><polygon points="0,1 1,1 1,2 0,2" fill="green"/><polygon points="3,2 4,2 4,3 3,3" fill="yellow"/><polygon points="1,3 2,3 2,4 1,4" fill="black" /></svg>');
+}
+#viewbox_only_maxmax {
+  /*border-width: 15px 30px 15px 30px;*/
+  border-image: 25% url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4"><polygon points="0,1 1,0 3,0 4,1 4,3 3,4 1,4 0,3" fill="deeppink" /><polygon points="1,2 2,2 2,3 1,3" fill="white" /><polygon points="1,0 2,0 2,1 1,1" fill="blue" /><polygon points="0,1 1,1 1,2 0,2" fill="green"/><polygon points="3,2 4,2 4,3 3,3" fill="yellow"/>><polygon points="1,3 2,3 2,4 1,4" fill="black" /></svg>');
+}
+#viewbox_only_maxmin {
+  /*border-width: 15px 30px 15px 30px;*/
+  border-image: 25% url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4"><polygon points="0,1 1,0 3,0 4,1 4,3 3,4 1,4 0,3" fill="deeppink" /><polygon points="1,2 2,2 2,3 1,3" fill="white" /><polygon points="1,0 2,0 2,1 1,1" fill="blue" /><polygon points="0,1 1,1 1,2 0,2" fill="green"/><polygon points="3,2 4,2 4,3 3,3" fill="yellow"/>><polygon points="1,3 2,3 2,4 1,4" fill="black" /></svg>');
+}
+#viewbox_only_maxmid {
+  /*border-width: 15px 30px 15px 30px;*/
+  border-image: 25% url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4"><polygon points="0,1 1,0 3,0 4,1 4,3 3,4 1,4 0,3" fill="deeppink" /><polygon points="1,2 2,2 2,3 1,3" fill="white" /><polygon points="1,0 2,0 2,1 1,1" fill="blue" /><polygon points="0,1 1,1 1,2 0,2" fill="green"/><polygon points="3,2 4,2 4,3 3,3" fill="yellow"/>><polygon points="1,3 2,3 2,4 1,4" fill="black" /></svg>');
+}
+#viewbox_only_midmid {
+  /*border-width: 15px 30px 15px 30px;*/
+  border-image: 25% url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4"><polygon points="0,1 1,0 3,0 4,1 4,3 3,4 1,4 0,3" fill="deeppink" /><polygon points="1,2 2,2 2,3 1,3" fill="white" /><polygon points="1,0 2,0 2,1 1,1" fill="blue" /><polygon points="0,1 1,1 1,2 0,2" fill="green"/><polygon points="3,2 4,2 4,3 3,3" fill="yellow"/>><polygon points="1,3 2,3 2,4 1,4" fill="black" /></svg>');
+}
+#viewbox_only_midmax {
+  /*border-width: 15px 30px 15px 30px;*/
+  border-image: 25% url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4"><polygon points="0,1 1,0 3,0 4,1 4,3 3,4 1,4 0,3" fill="deeppink" /><polygon points="1,2 2,2 2,3 1,3" fill="white" /><polygon points="1,0 2,0 2,1 1,1" fill="blue" /><polygon points="0,1 1,1 1,2 0,2" fill="green"/><polygon points="3,2 4,2 4,3 3,3" fill="yellow"/>><polygon points="1,3 2,3 2,4 1,4" fill="black" /></svg>');
+}
+#viewbox_only_midmin {
+  /*border-width: 15px 30px 15px 30px;*/
+  border-image: 25% url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4"><polygon points="0,1 1,0 3,0 4,1 4,3 3,4 1,4 0,3" fill="deeppink" /><polygon points="1,2 2,2 2,3 1,3" fill="white" /><polygon points="1,0 2,0 2,1 1,1" fill="blue" /><polygon points="0,1 1,1 1,2 0,2" fill="green"/><polygon points="3,2 4,2 4,3 3,3" fill="yellow"/>><polygon points="1,3 2,3 2,4 1,4" fill="black" /></svg>');
+}
+#viewbox_only {
+  /*border-width: 15px 30px 15px 30px;*/
+  border-image: 25% url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4"><polygon points="0,1 1,0 3,0 4,1 4,3 3,4 1,4 0,3" fill="deeppink" /><polygon points="1,2 2,2 2,3 1,3" fill="white" /><polygon points="1,0 2,0 2,1 1,1" fill="blue" /><polygon points="0,1 1,1 1,2 0,2" fill="green"/><polygon points="3,2 4,2 4,3 3,3" fill="yellow"/><polygon points="1,3 2,3 2,4 1,4" fill="black" /></svg>');
+}
+#viewbox_only_80X80 {
+  width: 50px; height: 50px;
+  /*border-width: 15px 30px 15px 30px;*/
+  border-image: 25% url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4"><polygon points="0,1 1,0 3,0 4,1 4,3 3,4 1,4 0,3" fill="deeppink" /><polygon points="1,2 2,2 2,3 1,3" fill="white" /><polygon points="1,0 2,0 2,1 1,1" fill="blue" /><polygon points="0,1 1,1 1,2 0,2" fill="green"/><polygon points="3,2 4,2 4,3 3,3" fill="yellow"/><polygon points="1,3 2,3 2,4 1,4" fill="black" /></svg>');
+}
+#viewbox_only_160X80 {
+  width: 130px; height: 50px;
+  /*border-width: 15px 30px 15px 30px;*/
+  border-image: 25% url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4"><polygon points="0,1 1,0 3,0 4,1 4,3 3,4 1,4 0,3" fill="deeppink" /><polygon points="1,2 2,2 2,3 1,3" fill="white" /><polygon points="1,0 2,0 2,1 1,1" fill="blue" /><polygon points="0,1 1,1 1,2 0,2" fill="green"/><polygon points="3,2 4,2 4,3 3,3" fill="yellow"/><polygon points="1,3 2,3 2,4 1,4" fill="black" /></svg>');
+}
+#viewbox_viewport {
+  border-image: 25% url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4" preserveAspectRatio="xMinYMin none"><polygon points="0,1 1,0 3,0 4,1 4,3 3,4 1,4 0,3" fill="deeppink" /><polygon points="1,2 2,2 2,3 1,3" fill="white" /><polygon points="1,0 2,0 2,1 1,1" fill="blue" /><polygon points="0,1 1,1 1,2 0,2" fill="green"/><polygon points="3,2 4,2 4,3 3,3" fill="yellow"/><polygon points="1,3 2,3 2,4 1,4" fill="black" /></svg>');
+}
+#viewport_only {
+  /*border-width: 5px 15px 5px 15px;*/
+  border-image: 25% url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><polygon points="0,1 1,0 3,0 4,1 4,3 3,4 1,4 0,3" fill="deeppink" /><polygon points="1,2 2,2 2,3 1,3" fill="white" /><polygon points="1,0 2,0 2,1 1,1" fill="blue" /><polygon points="0,1 1,1 1,2 0,2" fill="green"/><polygon points="3,2 4,2 4,3 3,3" fill="yellow"/><polygon points="1,3 2,3 2,4 1,4" fill="black" /></svg>');
+}
+#no_viewport_viewbox {
+  border-image: 25% url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><polygon points="0,1 1,0 3,0 4,1 4,3 3,4 1,4 0,3" fill="deeppink" /><polygon points="1,2 2,2 2,3 1,3" fill="white" /><polygon points="1,0 2,0 2,1 1,1" fill="blue" /><polygon points="0,1 1,1 1,2 0,2" fill="green"/><polygon points="3,2 4,2 4,3 3,3" fill="yellow"/><polygon points="1,3 2,3 2,4 1,4" fill="black" /></svg>');
+}
+#circle_viewpox{
+  border-image: 25% url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4" preserveAspectRatio="xMinYMin slice"><circle cx="25%" cy="25%" r="25%" fill="red" /><circle cx="75%" cy="25%" r="25%" fill="blue" /><circle cx="25%" cy="75%" r="25%" fill="yellow" /><circle cx="75%" cy="75%" r="25%" fill="green" /></svg>');
+}
+#circle_none{
+  width: 50px; height: 50px;
+  border-image: 50% url('data:image/svg+xml,<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" ><circle cx="25%" cy="25%" r="25%" fill="red" /><circle cx="75%" cy="25%" r="25%" fill="blue" /><circle cx="25%" cy="75%" r="25%" fill="yellow" /><circle cx="75%" cy="75%" r="25%" fill="green" /></svg>');
+}
+#circle_none2{
+  border-image: 50% url('data:image/svg+xml,<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" ><circle cx="25%" cy="25%" r="25%" fill="red" /><circle cx="75%" cy="25%" r="25%" fill="blue" /><circle cx="25%" cy="75%" r="25%" fill="yellow" /><circle cx="75%" cy="75%" r="25%" fill="green" /></svg>');
+}
+#circle_viewport{
+  border-image: 25% url('data:image/svg+xml,<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><circle cx="25%" cy="25%" r="25%" fill="red" /><circle cx="75%" cy="25%" r="25%" fill="blue" /><circle cx="25%" cy="75%" r="25%" fill="yellow" /><circle cx="75%" cy="75%" r="25%" fill="green" /></svg>');
+}
+
+/* Still wrong */
+#viewbox_rounding_0042 {
+  border-image: 25% url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 2"><polygon points="0,1 1,0 3,0 4,1 4,3 3,4 1,4 0,3" fill="deeppink" /><polygon points="1,2 2,2 2,3 1,3" fill="white" /><polygon points="1,0 2,0 2,1 1,1" fill="blue" /><polygon points="0,1 1,1 1,2 0,2" fill="green"/><polygon points="3,2 4,2 4,3 3,3" fill="yellow"/><polygon points="1,3 2,3 2,4 1,4" fill="black" /></svg>');
+}
+</style>
+</head>
+<body>
+  <p>source svg</p>
+  <!--<div id='source_svg'></div>-->
+  <div id='circle_none2'></div> 
+  <div id='viewbox_only_160X80'></div>
+  <div id='viewbox_only_80X80'></div>
+  <p>= Failure - no viewport and viewbox=</p>
+  <div id='circle_none'></div> 
+  <div id='circle_none2'></div> 
+  <div id='no_vp_vb_silce_number'></div>
+  <div id='no_viewport_viewbox'></div>
+  <p>circle: viewbox only/ none/ viewport only</p>
+  <div id='circle_viewpox'></div>
+  <div id='circle_none'></div>
+  <div id='circle_viewport'></div>
+  <p>= viewbox only =</p>
+  <div id='viewbox_only'></div>
+  <p>= viewbox + viewport (no preserveAspectRatio)=</p>
+  <div id='viewbox_viewport'></div>
+  <p>= viewport only =</p>
+  <div id='viewport_only'></div>
+  <p>= Failure - no viewport and viewbox=</p>
+  <div id='no_viewport_viewbox'></div>
+  <p>= Pass - No rounding, viewport box = (0, 0, 8, 4) =</p>
+  <div id='viewbox_rounding_0084'></div>
+  <p> Failure - viewbox rounding(viewBox="0 0 4 2")</p>
+  <div id='viewbox_rounding_0042'></div>
+</body>
+</html>

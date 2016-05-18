@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="reftest-wait" font-size="80">
+ 
+  <script type="application/javascript">
+    document.addEventListener("MozReftestInvalidate", doTest, false);
+ 
+    function doTest() {
+      var svgns = "http://www.w3.org/2000/svg";
+      var rect = document.createElementNS(svgns, "rect");
+      rect.setAttribute("x", "20");
+      rect.setAttribute("y", "20");
+      rect.setAttribute("width", "440");
+      rect.setAttribute("height", "80");
+      rect.setAttribute("style", "fill: url(#grad1)");
+      document.documentElement.appendChild(rect);
+ 
+      rect = document.createElementNS(svgns, "rect");
+      rect.setAttribute("x", "20");
+      rect.setAttribute("y", "150");
+      rect.setAttribute("width", "440");
+      rect.setAttribute("height", "80");
+      rect.setAttribute("style", "fill: url(#grad2)");
+      document.documentElement.appendChild(rect);
+ 
+      var text = document.createElementNS(svgns, "text");
+      text.setAttribute("x", "20");
+      text.setAttribute("y", "300");
+      text.setAttribute("width", "440");
+      text.setAttribute("height", "80");
+      text.setAttribute("style", "fill: url(#grad1)");
+      text.appendChild(document.createTextNode("gradiation"));
+      document.documentElement.appendChild(text);
+ 
+      text = document.createElementNS(svgns, "text");
+      text.setAttribute("x", "20");
+      text.setAttribute("y", "400");
+      text.setAttribute("width", "440");
+      text.setAttribute("height", "80");
+      text.setAttribute("style", "fill: url(#grad2)");
+      text.appendChild(document.createTextNode("gradiation"));
+      document.documentElement.appendChild(text);
+ 
+      history.pushState(null, "", "new-state");
+ 
+      document.documentElement.removeAttribute('class');      
+    }
+ 
+  </script>
+ 
+  <!-- Tests that things still work when using pushState -->
+<linearGradient id="grad1" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="0">
+  <stop id="green"   stop-color="#00dd00"   offset="0"/>
+  <stop id="blue"    stop-color="#0000dd"   offset="0.5"/>
+  <stop id="magenta" stop-color="magenta"   offset="1"/>
+</linearGradient>
+ 
+<linearGradient id="grad2" xlink:href="#grad1"/>
+ 
+</svg>

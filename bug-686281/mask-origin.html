@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="mask-repeat">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>mask origin</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
+        <style type="text/css">
+        body {
+            /*background-color: gray;*/
+            /*background-image: url(background-image.png);*/
+            /* Place div at (0, 0) */
+            margin: 0px;
+        }
+
+        .container {
+            width: 1200px;
+            height: 1200px;
+            margin: 0px;
+        }
+        div {
+            background-image: url(http://tympanus.net/codrops-playground/assets/images/cssref/properties/mask-repeat/field.jpg);
+            -webkit-mask-image: url(mask-image.png);
+            mask-image: url(mask-image.png);
+    
+            padding:100px;
+            border:10px dotted #000000;
+            -webkit-mask-origin:padding-box;
+            mask-origin:padding-box;
+            -webkit-mask-repeat:no-repeat;
+            mask-repeat:no-repeat;
+            /*mask-size: 100px;*/
+            /*mask-repeat: repeat;*/
+            /*mask-size: 100px 100px;*/
+        }
+        #LT {
+            -webkit-mask-position: left bottom;
+            mask-position: right bottom;  
+        }
+        #LC {
+            -webkit-mask-position: left center;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container" id="LC">
+            mask-origin
+        </div>
+    </body>
+</html>
